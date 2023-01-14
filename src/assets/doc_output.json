@@ -6,13 +6,23 @@
     "description": "Set of endpoints to query ENS metadata and more",
     "contact": "contact@ens.domains",
     "license": "MIT License",
-    "x-logo": {
-      "url": "/assets/logo.svg",
-      "backgroundColor": "#FFFFFF",
-      "altText": "Ethereum Name Service"
+    "x_logo": {
+      "url": "./src/assets/logo.svg",
+      "backgroundColor": "#FFFFFF"
     }
   },
   "paths": {
+    "/": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/{networkName}/{contractAddress(0x[a-fA-F0-9]{40})}/{tokenId}": {
       "get": {
         "description": "ENS NFT metadata",
@@ -26,11 +36,11 @@
             }
           },
           {
-            "name": "contractAddress",
+            "name": "contractAddress(0x[a-fA-F0-9]{40})",
             "in": "path",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/contractAddress"
+              "type": "string"
             }
           },
           {
@@ -42,6 +52,13 @@
             },
             "type": "string",
             "description": "Labelhash(v1) /Namehash(v2) of your ENS name.\n\nMore: https://docs.ens.domains/contract-api-reference/name-processing#hashing-names"
+          },
+          {
+            "name": "{}",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -68,6 +85,9 @@
           },
           "501": {
             "description": "Unsupported network"
+          },
+          "504": {
+            "description": "Gateway Timeout"
           }
         }
       }
@@ -85,11 +105,11 @@
             }
           },
           {
-            "name": "contractAddress",
+            "name": "contractAddress(0x[a-fA-F0-9]{40})",
             "in": "path",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/contractAddress"
+              "type": "string"
             }
           },
           {
@@ -101,6 +121,13 @@
             },
             "type": "string",
             "description": "Labelhash(v1) /Namehash(v2) of your ENS name.\n\nMore: https://docs.ens.domains/contract-api-reference/name-processing#hashing-names"
+          },
+          {
+            "name": "{}",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -112,6 +139,9 @@
           },
           "501": {
             "description": "Unsupported network"
+          },
+          "504": {
+            "description": "Gateway Timeout"
           }
         }
       }
@@ -129,11 +159,11 @@
             }
           },
           {
-            "name": "contractAddress",
+            "name": "contractAddress(0x[a-fA-F0-9]{40})",
             "in": "path",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/contractAddress"
+              "type": "string"
             }
           },
           {
@@ -145,6 +175,13 @@
             },
             "type": "string",
             "description": "Labelhash(v1) /Namehash(v2) of your ENS name.\n\nMore: https://docs.ens.domains/contract-api-reference/name-processing#hashing-names"
+          },
+          {
+            "name": "{}",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -153,9 +190,6 @@
           },
           "500": {
             "description": "Internal Server Error"
-          },
-          "501": {
-            "description": "Unsupported network"
           }
         }
       }
@@ -203,6 +237,9 @@
           },
           "501": {
             "description": "Unsupported network"
+          },
+          "504": {
+            "description": "Gateway Timeout"
           }
         }
       }
@@ -238,6 +275,9 @@
           },
           "501": {
             "description": "Unsupported network"
+          },
+          "504": {
+            "description": "Gateway Timeout"
           }
         }
       }

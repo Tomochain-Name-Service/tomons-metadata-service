@@ -25,7 +25,7 @@ export class MockEntry {
     hasImageKey = null,
     image,
     owner = '0x97ba55f61345665cf08c4233b9d6e61051a43b18',
-    parent = '0x93cdeb708b7545dc668eb9280176169d1c33cfd8ed6f04690a0bcc88a93fc4ae',
+    parent = '0x5513f0729608beb3f5df42dd873abcfa95e225f4869d2a2a1e42b264790e0238',
     resolver = null,
     registration = false,
     statusCode = 200,

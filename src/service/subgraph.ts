@@ -1,7 +1,7 @@
 import { gql } from 'graphql-request';
 
 const ETH_NAMEHASH =
-  '0x93cdeb708b7545dc668eb9280176169d1c33cfd8ed6f04690a0bcc88a93fc4ae';
+  '0x5513f0729608beb3f5df42dd873abcfa95e225f4869d2a2a1e42b264790e0238';
 
 export const GET_DOMAINS = gql`
   query getDomains($tokenId: String) {
