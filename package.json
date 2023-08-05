@@ -9,8 +9,8 @@
   },
   "dependencies": {
     "@adraffy/ens-normalize": "^1.9.0",
-    "@ensdomains/ens-avatar": "^0.2.5",
     "@ensdomains/ensjs": "^3.0.0-alpha.61",
+    "@tomochain-name-service/tomons-avatar": "^0.3.0",
     "@types/lodash": "^4.14.170",
     "btoa": "^1.2.1",
     "canvas": "^2.11.2",

@@ -1,5 +1,5 @@
 import avaTest, { ExecutionContext, TestFn } from 'ava';
-import { utils } from '@ensdomains/ens-avatar'
+import { utils } from '@tomochain-name-service/tomons-avatar'
 import urlJoin from 'url-join';
 
 import { TestContext } from '../../mock/interface';

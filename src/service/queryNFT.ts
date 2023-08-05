@@ -1,12 +1,10 @@
-import { utils, specs, UnsupportedNamespace } from '@ensdomains/ens-avatar';
+import { utils, specs, UnsupportedNamespace } from '@tomochain-name-service/tomons-avatar';
 import getNetwork, { NetworkName }            from '../service/network';
 import { UnsupportedNetwork }                 from '../base';
 
 const networks: { [key: string]: string } = {
-  '1': 'mainnet',
-  '3': 'ropsten',
-  '4': 'rinkeby',
-  '5': 'goerli',
+  '88': 'mainnet',
+  '89': 'testnet'
 };
 
 export async function queryNFT(uri: string) {

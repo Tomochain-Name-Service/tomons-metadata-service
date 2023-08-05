@@ -15,7 +15,7 @@ export function blockRecursiveCalls(
       parsedRequestOrigin.protocol.includes('http')
     ) {
       console.warn(`Recursive call detected`);
-      res.status(403).json({ message: 'Recursive calls are not allowed.' });
+      //res.status(403).json({ message: 'Recursive calls are not allowed.' });
     }
   }
   next();
