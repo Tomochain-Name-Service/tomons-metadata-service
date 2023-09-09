@@ -48,6 +48,7 @@ async function checkV2Contract(
   contract: ethers.Contract,
   identifier: string
 ): Promise<CheckContractResult> {
+  console.log({ADDRESS_NAME_WRAPPER})
   if (contract.address !== ADDRESS_NAME_WRAPPER) {
     try {
       const isInterfaceSupported = await contract.supportsInterface(

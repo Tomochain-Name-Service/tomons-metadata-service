@@ -6,6 +6,8 @@ const HOST = process.env.HOST || 'localhost';
 const ENV = process.env.ENV || 'local'; // local/prod
 const REDIS_URL = process.env.REDIS_URL;
 
+const METADATA_HOST_ADDR = process.env.METADATA_HOST_ADDR || 'http://localhost:8080'
+
 const FONT_FOLDER = path.join((ENV === 'local' ? 'src' : 'dist'), 'assets');
 const CANVAS_FONT_PATH = path.join(FONT_FOLDER, 'Satoshi-Bold.ttf');
 const CANVAS_EMOJI_FONT_PATH = path.join(FONT_FOLDER, 'NotoColorEmoji.ttf');
@@ -51,4 +53,5 @@ export {
   NODE_PROVIDER_URL_GOERLI,
   RESPONSE_TIMEOUT,
   SERVER_URL,
+  METADATA_HOST_ADDR,
 };

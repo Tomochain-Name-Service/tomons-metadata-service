@@ -8,7 +8,7 @@ import {
   RetrieveURIFailed,
   TextRecordNotFound,
 }                           from '../base';
-import { IPFS_GATEWAY }     from '../config';
+import { IPFS_GATEWAY, METADATA_HOST_ADDR }     from '../config';
 import { abortableFetch }   from '../utils/abortableFetch';
 
 const window = new JSDOM('').window;
@@ -53,9 +53,11 @@ export class AvatarMetadata {
   async getImage() {
     let avatarURI;
     try {
+      //console.log({avt: this.avtResolver})
       avatarURI = await this.avtResolver.getAvatar(this.uri, {
         jsdomWindow: window,
       });
+      console.log({avatarURI})
     } catch (error: any) {
       if (error instanceof Error) {
         console.log(`${this.uri} - error:`, error.message);
@@ -130,7 +132,7 @@ export class AvatarMetadata {
       if (metadata.image_url) {
         metadata.image = metadata.image_url;
       } else if (metadata.image_data) {
-        metadata.image = `https://metadata.tomons.domains/${networkName}/avatar/${this.uri}`;
+        metadata.image = `${METADATA_HOST_ADDR}/${networkName}/avatar/${this.uri}`;
       } else {
         throw new TextRecordNotFound(
           'There is no avatar set under given address',

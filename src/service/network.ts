@@ -23,6 +23,7 @@ function getWeb3URL(
   api: string,
   network: NetworkName
 ): string {
+  console.log({providerName})
   switch (providerName.toUpperCase()) {
     case NODE_PROVIDERS.RPC:
       return api;
@@ -45,7 +46,7 @@ export default function getNetwork(network: NetworkName): {
       break;
     case NETWORK.MAINNET:
       SUBGRAPH_URL =
-        'https://api.thegraph.com/subgraphs/name/makoto/ensrinkeby';
+        'https://graph.tomons.domains/subgraphs/name/tomons-domains/subgraph';
       break;
     default:
       throw new UnsupportedNetwork(`Unknown network '${network}'`, 501);

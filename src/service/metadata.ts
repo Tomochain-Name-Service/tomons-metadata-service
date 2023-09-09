@@ -3,6 +3,7 @@ import { Version }                              from '../base';
 import {
   CANVAS_FONT_PATH,
   CANVAS_EMOJI_FONT_PATH,
+  METADATA_HOST_ADDR,
 }                                               from '../config';
 import createSVGfromTemplate                    from '../svg-template';
 import base64EncodeUnicode                      from '../utils/base64encode';
@@ -78,12 +79,12 @@ export class Metadata {
       ? name
       : tokenId.replace(
           new RegExp('^(.{0,6}).*(.{4})$', 'im'),
-          '[$1...$2].eth'
+          '[$1...$2].tomo'
         );
   }
 
   formatDescription(name: string, description?: string) {
-    const baseDescription = description || `${this.name}, an ENS name.`;
+    const baseDescription = description || `${this.name}, a Tomo name.`;
     const normalizedNote = !this.is_normalized ? ` (${name} is not in normalized form)` : '';
     const asciiWarning = this.generateAsciiWarning(this.getLabel(name));
     return `${baseDescription}${normalizedNote}${asciiWarning}`;

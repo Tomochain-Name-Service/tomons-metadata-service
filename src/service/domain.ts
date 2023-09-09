@@ -20,6 +20,7 @@ import {
   getWrapperState 
 }                         from '../utils/fuse';
 import { getNamehash }    from '../utils/namehash';
+import { METADATA_HOST_ADDR } from '../config';
 
 const eth =
   '0xee7289196899d8c5bc40150453f87a5ebf33e301b7ed2537d6cc0ba5caeadcd5';
@@ -34,6 +35,7 @@ export async function getDomain(
   version: Version,
   loadImages: boolean = true
 ): Promise<Metadata> {
+  console.log('here')
   let hexId: string, intId;
   if (!tokenId.match(/^0x/)) {
     intId = tokenId;
@@ -98,10 +100,10 @@ export async function getDomain(
       metadata.generateImage();
     } else {
       metadata.setBackground(
-        `https://metadata.ens.domains/${networkName}/avatar/${name}`
+        `${METADATA_HOST_ADDR}/${networkName}/avatar/${name}`
       );
       metadata.setImage(
-        `https://metadata.ens.domains/${networkName}/${contractAddress}/${hexId}/image`
+        `${METADATA_HOST_ADDR}/${networkName}/${contractAddress}/${hexId}/image`
       );
     }
   }
