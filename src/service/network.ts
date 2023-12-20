@@ -12,8 +12,8 @@ const NODE_PROVIDERS = {
 };
 
 export const NETWORK = {
-  TESTNET: 'Tomochain Testnet',
-  MAINNET: 'Tomochain',
+  TESTNET: 'Viction Testnet',
+  MAINNET: 'Viction',
 } as const;
 
 export type NetworkName = typeof NETWORK[keyof typeof NETWORK];
