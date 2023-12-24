@@ -23,7 +23,7 @@ import { getNamehash }    from '../utils/namehash';
 import { METADATA_HOST_ADDR } from '../config';
 
 const eth =
-  '0xee7289196899d8c5bc40150453f87a5ebf33e301b7ed2537d6cc0ba5caeadcd5';
+  '0xb700cb33915a00660ce25e255ffb392f631369da2c2359ede071aafb33d80acd';
 const GRACE_PERIOD_MS = 7776000000; // 90 days as milliseconds
 
 export async function getDomain(

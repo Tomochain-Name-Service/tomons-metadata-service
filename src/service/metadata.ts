@@ -79,7 +79,7 @@ export class Metadata {
       ? name
       : tokenId.replace(
           new RegExp('^(.{0,6}).*(.{4})$', 'im'),
-          '[$1...$2].tomo'
+          '[$1...$2].vic'
         );
   }
 
@@ -237,7 +237,7 @@ export class Metadata {
       name.substring(0, Metadata.MAX_CHAR - 7) +
       '...' +
       name.substring(_nameLength - 7, _nameLength - 4) +
-      '.tomo'
+      '.vic'
     );
   }
 

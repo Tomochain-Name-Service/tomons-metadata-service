@@ -42,11 +42,11 @@ export default function getNetwork(network: NetworkName): {
   let SUBGRAPH_URL: string;
   switch (network) {
     case NETWORK.TESTNET:
-      SUBGRAPH_URL = 'https://graph.toumas.work/subgraphs/name/tomons-domains/subgraph';
+      SUBGRAPH_URL = 'https://graph.viction.name/subgraphs/name/vns/subgraph';
       break;
     case NETWORK.MAINNET:
       SUBGRAPH_URL =
-        'https://graph.tomons.domains/subgraphs/name/tomons-domains/subgraph';
+        'https://graph.viction.name/subgraphs/name/vns/subgraph';
       break;
     default:
       throw new UnsupportedNetwork(`Unknown network '${network}'`, 501);
